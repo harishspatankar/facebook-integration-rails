@@ -1,1 +1,12 @@
 <h1>Test Page</h1>
+
+<body>
+<% if current_user %>
+  <p>Hello</p>
+  <p><%= image_tag current_user.image_url %></p>
+  <p><strong><%= current_user.name %></strong></p>
+  <%= link_to  "sign out", signout_path, id: "sign_out" %>
+<% else %>
+  <%= link_to  "sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+<% end %>
+</body>
