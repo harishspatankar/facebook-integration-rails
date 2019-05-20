@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Match Records</title>
+  </head>
+  <body>
+    <div class='row'>
+      <%= form_tag(generate_images_match_records_path, method: :get) do %>
+        <% @match_record.each do |match_record| %>
+          <div class='column'>
+            <div class='card'>
+              <%= check_box_tag 'match_records[]', match_record.id %>
+              <div class='card_title'>
+                <%= match_record.home_team %> Vs <%= match_record.opponent %>
+              </div>
+              <p>Date: <%= match_record.match_date %></p>
+              <p>Type: <%= match_record.match_type %></p>
+              <p class='result'>Result: <b><span class='result_type_win'><%= match_record.result %></span></b></p>
+              <p><%= match_record.home_team %>(<%= match_record.home_score %>) <%= match_record.opponent %>(<%= match_record.opponent_score %>)
+            </div>
+          </div>
+        <% end %>
+        <%= submit_tag("Submit") %>
+      <% end %>
+    </div>
+  </body>
+</html>
