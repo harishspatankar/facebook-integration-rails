@@ -39,6 +39,8 @@ gem 'omniauth-facebook'
 
 gem 'jquery-rails'
 gem 'koala'
+gem 'imgkit'
+gem 'wkhtmltoimage-binary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
